@@ -1,4 +1,3 @@
-"""Warranty Tracker (csv + datetime): logs gadgets and warns before warranties expire."""
 import csv
 from datetime import date
 
@@ -26,7 +25,7 @@ def load_rows():
             rows = list(csv.DictReader(f))
     except FileNotFoundError:
         return []
-    for r in rows:  # csv gives text, so convert numbers back
+    for r in rows:  
         r["id"], r["price"], r["months"] = int(r["id"]), float(r["price"]), int(r["months"])
     return rows
 
